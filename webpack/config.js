@@ -69,7 +69,16 @@ module.exports = {
               esModule: false,
             },
           },
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              api: 'modern',
+              sassOptions: {
+                silenceDeprecations: ['import', 'global-builtin', 'color-functions'],
+                quietDeps: true,
+              },
+            },
+          },
         ],
       },
       {
