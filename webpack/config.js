@@ -12,6 +12,7 @@ const getCommitHash = require('../scripts/getCommitHash');
 module.exports = {
   mode: 'development',
   devServer: {
+    allowedHosts: 'all',
     historyApiFallback: true,
     open: true,
     proxy: [
