@@ -18,7 +18,8 @@ module.exports = {
     proxy: [
       {
         context: ['/api', '/swagger'],
-        target: 'http://localhost:1242',
+        target: process.env.ASF_BACKEND_URL || 'http://localhost:1242',
+        changeOrigin: true,
         ws: true,
       },
     ],
@@ -119,6 +120,7 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
+  stats: 'minimal',
   watchOptions: {
     ignored: /generated/,
   },
